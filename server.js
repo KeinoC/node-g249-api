@@ -1,6 +1,7 @@
 // Import dependencies
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors"); // Import cors middleware
 
 // Create Express app
 const app = express();
@@ -8,6 +9,9 @@ const app = express();
 // Use body-parser middleware for parsing request bodies
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// Use cors middleware to enable CORS
+app.use(cors()); // Enable CORS for all routes
 
 // Define routes
 app.get("/", (req, res) => {
